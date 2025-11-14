@@ -30,9 +30,9 @@ Vamos usar o Docker para criar um "container" (uma caixa) com o MongoDB já pron
 
 4.  Digite o comando abaixo e pressione Enter:
 
-        ```bash
-        docker-compose -f docker-compose.dev.yml up -d
-        ```
+   ```bash
+   docker-compose -f docker-compose.dev.yml up -d
+   ```
 
 5.  **O que isso faz?** Ele lê o arquivo `docker-compose.dev.yml` e inicia o MongoDB. O `-d` faz ele rodar em segundo plano. O banco de dados estará acessível na porta `27017`, que é exatamente onde a API espera encontrá-lo.
 
@@ -42,7 +42,7 @@ Agora, vamos preparar a API em si.
 
 1.  **Crie um "Ambiente Virtual"**: Isso cria uma "bolha" para nosso projeto, para que as "peças" (pacotes) que ele usa não se misturem com outros projetos Python.
 
-        - _No terminal, dentro desta pasta `/backend`:_
+   - _No terminal, dentro desta pasta `/backend`:_
 
         ```bash
         python -m venv venv
@@ -50,27 +50,27 @@ Agora, vamos preparar a API em si.
 
 2.  **Ative o Ambiente Virtual**:
 
-        - _No Windows (CMD/PowerShell):_
+   - _No Windows (CMD/PowerShell):_
           ```bash
           .\venv\Scripts\activate
           ```
-        - _No macOS/Linux:_
+   - _No macOS/Linux:_
           ```bash
           source venv/bin/activate
           ```
-        - (Você deve ver `(venv)` aparecer no início da linha do seu terminal).
+   - (Você deve ver `(venv)` aparecer no início da linha do seu terminal).
 
 3.  **Instale os Pacotes (as "peças")**: Vamos instalar tudo o que está listado no arquivo `requirements.txt`.
-        ```bash
-        pip install -r requirements.txt
-        ```
+
+       ```bash
+       pip install -r requirements.txt
+       ```
 
 ### 3. Rode a API
 
 Tudo está pronto. Para iniciar o servidor da API, execute:
-
     ```bash
-    python run.py
+        python run.py
     ```
 
 - Este comando usa o arquivo run.py, que por sua vez inicia o uvicorn (um servidor) com o nosso aplicativo app.main:app.
@@ -87,19 +87,19 @@ Tudo está pronto. Para iniciar o servidor da API, execute:
 
 Com o servidor rodando, abra seu navegador de internet:
 
-    1. Teste 1: A API está viva?
+1. Teste 1: A API está viva?
 
     Acesse: <http://localhost:8000/>
 
     Você deve ver: {"status": "ok"}
 
-    2. Teste 2: A API está falando com o Banco de Dados?
+2. Teste 2: A API está falando com o Banco de Dados?
 
     Acesse: <http://localhost:8000/api/v1/db-check>
 
     Você deve ver: {"status": "ok", "message": "Conexão com o banco de dados bem-sucedida"}
 
-    3. Teste 3: Veja a Documentação (O "Manual" da API)
+3. Teste 3: Veja a Documentação (O "Manual" da API)
 
     Acesse: <http://localhost:8000/docs>
 
