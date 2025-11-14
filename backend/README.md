@@ -8,9 +8,9 @@ Ele é construído com **FastAPI** e se conecta a um banco de dados **MongoDB**.
 
 Antes de começar, garanta que você tem essas ferramentas no seu computador:
 
-    1.  **Python 3.10** (ou mais recente).
-    2.  **Docker** e **Docker Compose**: Usaremos isso para rodar o banco de dados MongoDB facilmente, sem precisar instalá-lo "na mão".
-    3.  **Um editor de código**: Como o VS Code.
+1.  **Python 3.10** (ou mais recente).
+2.  **Docker** e **Docker Compose**: Usaremos isso para rodar o banco de dados MongoDB facilmente, sem precisar instalá-lo "na mão".
+3.  **Um editor de código**: Como o VS Code.
 
 ---
 
@@ -22,25 +22,25 @@ Siga estas etapas para fazer a API funcionar na sua máquina.
 
 Vamos usar o Docker para criar um "container" (uma caixa) com o MongoDB já pronto para nós.
 
-    1.  Verifique se o aplicativo Docker Desktop está aberto e rodando.
+1.  Verifique se o aplicativo Docker Desktop está aberto e rodando.
     
-    2.  Abra seu terminal ou prompt de comando.
+2.  Abra seu terminal ou prompt de comando.
 
-    3.  **Importante:** Navegue de volta para a pasta **raiz** do projeto (a pasta `back_calendario_visitacao`, _não_ esta pasta `backend`).
+3.  **Importante:** Navegue de volta para a pasta **raiz** do projeto (a pasta `back_calendario_visitacao`, _não_ esta pasta `backend`).
 
-    4.  Digite o comando abaixo e pressione Enter:
+4.  Digite o comando abaixo e pressione Enter:
 
         ```bash
         docker-compose -f docker-compose.dev.yml up -d
         ```
 
-    5.  **O que isso faz?** Ele lê o arquivo `docker-compose.dev.yml` e inicia o MongoDB. O `-d` faz ele rodar em segundo plano. O banco de dados estará acessível na porta `27017`, que é exatamente onde a API espera encontrá-lo.
+5.  **O que isso faz?** Ele lê o arquivo `docker-compose.dev.yml` e inicia o MongoDB. O `-d` faz ele rodar em segundo plano. O banco de dados estará acessível na porta `27017`, que é exatamente onde a API espera encontrá-lo.
 
 ### 2. Configure a API (Esta pasta, `/backend`)
 
 Agora, vamos preparar a API em si.
 
-    1.  **Crie um "Ambiente Virtual"**: Isso cria uma "bolha" para nosso projeto, para que as "peças" (pacotes) que ele usa não se misturem com outros projetos Python.
+1.  **Crie um "Ambiente Virtual"**: Isso cria uma "bolha" para nosso projeto, para que as "peças" (pacotes) que ele usa não se misturem com outros projetos Python.
 
         - _No terminal, dentro desta pasta `/backend`:_
 
@@ -48,7 +48,7 @@ Agora, vamos preparar a API em si.
         python -m venv venv
         ```
 
-    2.  **Ative o Ambiente Virtual**:
+2.  **Ative o Ambiente Virtual**:
 
         - _No Windows (CMD/PowerShell):_
           ```bash
@@ -60,7 +60,7 @@ Agora, vamos preparar a API em si.
           ```
         - (Você deve ver `(venv)` aparecer no início da linha do seu terminal).
 
-    3.  **Instale os Pacotes (as "peças")**: Vamos instalar tudo o que está listado no arquivo `requirements.txt`.
+3.  **Instale os Pacotes (as "peças")**: Vamos instalar tudo o que está listado no arquivo `requirements.txt`.
         ```bash
         pip install -r requirements.txt
         ```
