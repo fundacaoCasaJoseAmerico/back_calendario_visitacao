@@ -1,0 +1,34 @@
+# Byte-code files
+*.pyc
+__pycache__/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Editor/IDE files
+.idea/
+.vscode/
+*.swp
+*.bak
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Database files (if using SQLite or similar local database)
+*.db
+*.sqlite3
+
+# Log files
+*.log
+
+# Dependency management
+Pipfile.lock # If using Pipenv
+poetry.lock # If using Poetry
+
+# Configuration files with sensitive information (if applicable)
+# Consider using environment variables for sensitive data instead of committing them.
+.env
+# config.ini
